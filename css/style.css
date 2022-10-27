@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.done{
+    text-decoration:line-through;
+}
+.container{
+    width: 60%;
+    margin: 0 auto;
+}
+.logo{
+    text-align: center;
+}
+.add-task{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.add-task label{
+    display: none;
+}
+#task{
+    border-radius: 10px;
+    margin-right: .5em;
+}
+#submit{
+    border-radius: 10px;
+    padding: .5em;
+}
+.task-list{
+    background-color: pink;
+    border-radius: 20px;
+    padding: 1em 2em;
+    margin-top: 2em;
+}
+.task-list ul{
+    list-style-type: none;
+    line-height: 2.5rem;
+}
+.task-list li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.task-list li .delete-task{
+    color: red;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
