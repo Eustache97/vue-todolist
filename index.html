@@ -21,7 +21,8 @@
                 <input id="task" 
                     type="text"
                     placeholder="Inserisci un nuovo task"
-                    v-model.trim="newTask.text">
+                    v-model.trim="newTask.text"
+                    @keyup.enter="addNewTask">
                 <button
                     id="submit"
                     @click="addNewTask">Aggiungi</button>
