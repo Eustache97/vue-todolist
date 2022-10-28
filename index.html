@@ -20,23 +20,33 @@
                 <label for="task">Nuovo task</label>
                 <input id="task" 
                     type="text"
-                    placeholder="Inserisci un nuovo task">
-                <button id="submit">Aggiungi</button>
+                    placeholder="Inserisci un nuovo task"
+                    v-model.trim="newTask.text">
+                <button
+                    id="submit"
+                    @click="addNewTask">Aggiungi</button>
             </div>
+            <div
+            class="error" v-if="hasError">
+            <small>il task deve essere almeno di 5 caratteri</small> 
+        </div>
             <div class="task-list">
                 <ul>
-                    <li>
-                        <p class="done">list item</p>
+                    <li
+                    v-for="(element, index) in tasks">
+                        <p
+                            @click="taskDoneNotDone(index)"
+                            :class="tasks[index].done === true ? 'done' : ''"> {{element.text}} </p>
                         <span class="delete-task">&cross;</span>
                     </li>
-                    <li>
+                    <!-- <li>
                         <p>list item</p>
                         <span class="delete-task">&cross;</span>
                     </li>
                     <li>
                         <p>list item</p>
                         <span class="delete-task">&cross;</span>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
 
