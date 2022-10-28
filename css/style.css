@@ -3,15 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-image: url("../img/bg.webp");
+    background-size: cover;
+}
+img{
+    max-width: 100%;
+}
 .b-red{
     border-color: red;
 }
 .done{
     text-decoration:line-through;
 }
-.container{
+.my-container{
     width: 60%;
     margin: 0 auto;
+    padding-top: 3rem;
 }
 .logo{
     text-align: center;
@@ -33,10 +41,12 @@
     padding: .5em;
 }
 .task-list{
-    background-color: pink;
+    /* width: 80%; */
+    background-color: rgba(192, 255, 197, 0.3);
     border-radius: 20px;
     padding: 1em 2em;
-    margin-top: 2em;
+    /* margin: 0 auto; */
+    margin-top: 2rem;
 }
 .task-list ul{
     list-style-type: none;
@@ -53,6 +63,10 @@
     font-size: 1.5rem;
     cursor: pointer;
 }
+.task-list li .check-task{
+    color: green;
+    font-size: 1.5rem;
+}
 .task-list li p{
     cursor: pointer;
 }
@@ -61,3 +75,4 @@
     color:red;
     text-align: center;
 }
+

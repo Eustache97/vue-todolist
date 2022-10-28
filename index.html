@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do list</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <div id="app" class="container">
+    <div id="app" class="my-container">
         <header>
             <div class="logo">
-                <img src="img/boolean-logo.png" alt="">
+                <img src="img/logo-boolean.png" alt="">
             </div>
         </header>
         <main>
@@ -32,14 +34,21 @@
             <small>il task deve essere almeno di 5 caratteri</small> 
         </div>
             <div class="task-list">
-                <ul>
+                <p
+                   class="text-center"
+                   v-if="tasks.length === 0">Hey <strong>Booleaner</strong>, sembra tu abbia fatto tutto; la tua lista è vuota!</p>
+                <ul
+                   v-else>
                     <li
                     v-for="(element, index) in tasks">
+                        <span
+                        class="check-task" 
+                        v-if="tasks[index].done">&check;</span>
                         <p
                             @click="taskDoneNotDone(index)"
                             :class="tasks[index].done === true ? 'done' : ''"> {{element.text}} </p>
                         <span class="delete-task"
-                        @click="deleteTask(index)">&cross;</span>
+                        @click="deleteTask(index)"><i class="fa-solid fa-trash"></i></span>
                     </li>
                     <!-- <li>
                         <p>list item</p>
