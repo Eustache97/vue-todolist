@@ -37,7 +37,8 @@
                         <p
                             @click="taskDoneNotDone(index)"
                             :class="tasks[index].done === true ? 'done' : ''"> {{element.text}} </p>
-                        <span class="delete-task">&cross;</span>
+                        <span class="delete-task"
+                        @click="deleteTask(index)">&cross;</span>
                     </li>
                     <!-- <li>
                         <p>list item</p>
